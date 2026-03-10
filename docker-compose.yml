@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - SECRET_KEY=${SECRET_KEY}
+      - GCS_BUCKET_NAME=${GCS_BUCKET_NAME}
+      - GCS_PROJECT_ID=${GCS_PROJECT_ID}
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+      - GCS_PUBLIC_URL_BASE=${GCS_PUBLIC_URL_BASE}
+      - CLOUD_SQL_CONNECTION_NAME=${CLOUD_SQL_CONNECTION_NAME}
+    volumes:
+      - ./credentials.json:/app/credentials.json:ro
+    restart: unless-stopped

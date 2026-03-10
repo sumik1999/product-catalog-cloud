@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+*.log
+*.db
+*.sqlite3
+.env
+credentials.json
+.DS_Store
+*.swp
+*.swo
